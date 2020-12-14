@@ -1,0 +1,607 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>index</title>
+		<link rel="stylesheet" type="text/css" href="css\public.css">
+		<link rel="stylesheet" type="text/css" href="css\style.css">
+		<style type="text/css">
+		</style>
+		<script src="js\public.js"></script>
+	</head>
+	<style>
+.box1{
+	width: 108px;
+	height: 100px;
+	position: absolute;
+	top:50px;
+	background-image: url(images/3.png)
+}
+.box{
+	width: 1200px;
+	height: 397px;
+	border: 1px solid red;
+	margin: 100px auto;
+	position: relative;
+	overflow: hidden;
+}
+.slider{
+	width: 8400px;
+	position: absolute;
+	left: -1200px;
+}
+.slide{
+	width: 1200px;
+	overflow: hidden;
+	float: left;
+}
+.box span{
+	display: block;
+	width: 30px;
+	height: 50px;
+	text-align: center;
+	cursor: pointer;
+	color: #fff;
+	top: 175px;
+	line-height: 50px;
+	background: rgb(255,0,0);
+	font-size: 30px;
+	position: absolute;
+	opacity: 0;
+}
+#left{
+	left: 30px;
+}
+#right{
+	right: 30px;
+}
+.nav{
+	position: absolute;
+	left: 300px;
+	bottom: 20px;
+}
+.nav>li{
+	float: left;
+	width: 20px;
+	height: 20px;
+	background: #ccc;
+	cursor: pointer;
+	margin: 0 10px;
+	border-radius: 50%;
+}
+.nav .active{
+	background: red;
+}
+#mytime{
+    text-align: center;	
+       }
+.jishi{
+	position:fixed;
+	top:40px;
+	left:1320px;
+}
+#bubbly-button {
+  font-size: 16px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  text-align: center;
+  background-color: #f8faff;
+}
+.anniu{
+  position:absolute;
+  top:150px;
+  right:700px;
+}
+.bubbly-button {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 2em;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: rgb(2,71,202);
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px rgb(2,71,202);
+}
+.bubbly-button:focus {
+  outline: 0;
+}
+.bubbly-button:before, .bubbly-button:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+.bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.bubbly-button:active {
+  transform: scale(0.9);
+  background-color: #e60074;
+  box-shadow: 0 2px 25px rgb(2,71,202);
+}
+.bubbly-button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+.bubbly-button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+	</style>
+	<div class="anniu"><button class="bubbly-button">河北师范大学!</button></div>
+	<body onload="time_fun()">
+		<div id="box1" class="box1"></div>
+		<div class="topbox">
+			<div class="top clearfloat">
+				<div class="login">
+					<a href="">登录</a>
+				</div>
+				<div class="lan">
+					<a href="">English</a><span>|</span><a href="">繁體中文</a>
+				</div>
+			</div>
+		</div>
+		<div class="head clearfloat">
+			<div class="logo">
+				<a href=""><img src="images\2.png"></a>
+			</div>
+			<div class="sear_box clearfloat">
+				<div class="search">
+					<input type="text" placeholder="请输入关键字搜索"><span>搜索</span>
+				</div>
+				<div class="edit"><a href="">手机版</a></div>
+				<div class="univer"><a href="">河北师范大学</a></div>
+
+			</div>
+		</div>
+		<div class="nav_box">
+			<div class="nav">
+				<ul class="clearfloat">
+					<li class="active"><a href="">首页</a></li>
+					<li><a href=>学院列表</a></li>
+					<li><a href=>学科列表</a></li>
+					<li><a href=>教师查询</a></li>
+					<li><a href=>关于主页</a></li>
+					<li class="nav_more">
+						<img src="images\menu.png">
+						<div class="nav_down">
+							<p><a href="">学院列表</a></p>
+							<p><a href="">教师查询</a></p>
+							<p><a href="">学院列表</a></p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="box" id="box">
+		<div class="slider" id="slider">
+			<div class="slide"><img src="images\banner_05.jpg" alt=""></div>
+			<div class="slide"><img src="images\banner_03.jpg" alt=""></div>
+			<div class="slide"><img src="images\banner_01.jpg" alt=""></div>
+			<div class="slide"><img src="images\banner_02.jpg" alt=""></div>
+			<div class="slide"><img src="images\banner_03.jpg" alt=""></div>
+			<div class="slide"><img src="images\banner_04.jpg" alt=""></div>
+			<div class="slide"><img src="images\banner_03.jpg" alt=""></div>			
+		</div>
+		<span id="left"><</span>
+		<span id="right">></span>
+		<ul class="nav" id="nav">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+		<div class="jishi"><p id="mytime" style="color:rgb(62,71,202);font-size:20px">你已浏览:00分00秒</p></div>
+		<div class="mentor">
+			<div class="men_top">
+				<span>学科查询</span>
+				<input type="text" placeholder="名称："><a href="" class="men_btn">查询</a><a href="">更多查询</a>
+			</div>
+			<div class="techbox">
+				<div class="tech_btn tech_prev"></div>
+				<div class="tech_ban">
+					<ul class="clearfloat">
+						<li class="clearfloat active">
+							<div class="techer">
+								<div class="tech">
+									<a href=""><img src="images\xk1.jpg"></a>
+								</div>
+								<div class="te_name">
+									细胞生物学
+								</div>
+							</div>
+							<div class="techer">
+								<div class="tech">
+									<a href=""><img src="images\xk2.jpg"></a>
+								</div>
+								<div class="te_name">
+									无机化学
+								</div>
+							</div>
+							<div class="techer">
+								<div class="tech">
+									<a href=""><img src="images\xk3.jpg"></a>
+								</div>
+								<div class="te_name">
+									汉语言文学
+								</div>
+							</div>
+							<div class="techer">
+								<div class="tech">
+									<a href=""><img src="images\xk4.jpg"></a>
+								</div>
+								<div class="te_name">
+									考古学
+								</div>
+							</div>
+						</li>						
+					</ul>
+				</div>
+				<div class="tech_btn tech_next"></div>
+				<div class="tech_num">
+					<span class="active"></span><span></span><span></span>
+				</div>
+			</div>
+		</div>
+		<div class="recen_box">
+			<div class="recen">
+				<div class="recen_pic"><img src="images\home.png"></div>
+				<div class="rece_text">
+					<img src="images\san1.png"><span>最近更新主页</span><img src="images\san2.png">
+				</div>
+				<div class="rece_en">Recently updated home page</div>
+
+				<div class="rece_ban">
+					<ul class="clearfloat">
+						<li class="clearfloat">
+							<div class="up_pic">
+								<a href=""><img src="images\xy1.jpg"></a>
+							</div>
+							<div class="date_text">
+								<div class="data_name">
+									<span>栗战书</span><em>(硕士)</em>
+								</div>
+								<div class="sub">
+									<span>学习经历：</span><em>河北师范大学夜大学政教系毕业 </em>
+								</div>
+								<div class="sub">
+									<span>任职：</span><em>中共十九届中央政治局常委，十三届全国人大常委会委员长、党组书记</em>
+								</div>
+								<div class="up_time">
+									【更新时间：2020-12-12】
+								</div>
+							</div>
+						</li>
+						<li class="clearfloat">
+							<div class="up_pic">
+								<a href=""><img src="images\xy2.jpg"></a>
+							</div>
+							<div class="date_text">
+								<div class="data_name">
+									<span>龙庄伟</span><em>(硕士)</em>
+								</div>
+								<div class="sub">
+									<span>学习经历：</span><em>河北师范学院获硕士学位  </em>
+								</div>
+								<div class="sub">
+									<span>任职：</span><em>十三届全国人民代表大会常务委员会代表资格审查委员会委员，中华职业教育社副理事长</em>
+								</div>
+								<div class="up_time">
+									【更新时间：2020-12-12】
+								</div>
+							</div>
+						</li>
+						<li class="clearfloat">
+							<div class="up_pic">
+								<a href=""><img src="images\xy3.jpg"></a>
+							</div>
+							<div class="date_text">
+								<div class="data_name">
+									<span>宋仁堂 </span><em>(学士)</em>
+								</div>
+								<div class="sub">
+									<span>学习经历：</span><em>河北师范学院自考专科汉语言文学专业学习，获文学学士学位  </em>
+								</div>
+								<div class="sub">
+									<span>任职：</span><em>河北省沧州市委副书记、市委党校校长</em>
+								</div>
+								<div class="up_time">
+									【更新时间：2020-12-12】
+								</div>
+							</div>
+						</li>					
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="paper_box">
+			<div class="pap_top">
+				<span class="active">师大要闻</span><span>学术活动</span><span>通知公告</span>
+			</div>
+			<div class="paper">
+				<ul class="clearfloat active">
+					<li>
+						<div class="pap_tit">
+							<a href=""><em></em> 教育厅专家组对我校实验室安全工作进行专项检查</a>
+						</div>
+						<div class="time_box">
+							<span class="time">2020-12-11</span>
+						</div>
+					</li>
+					<li>
+						<div class="pap_tit">
+							<a href=""><em></em>【支部党旗红】附属实验中学高中第三党支部：立足本职，引领发展</a>
+						</div>
+						<div class="time_box">
+							<span class="time">2020-12-10</span>
+						</div>
+					</li>
+					<li>
+						<div class="pap_tit">
+							<a href=""><em></em>我校召开第31期顶岗实习石家庄区域研讨交流会</a>
+						</div>
+						<div class="time_box">
+							<span class="time">2020-12-10</span>
+						</div>
+					</li>
+					<li>
+						<div class="pap_tit">
+							<a href=""><em></em>学校召开图书馆馆藏资源建设及利用分析研讨会</a>
+						</div>
+						<div class="time_box">
+							<span class="time">2020-12-10</span>
+						</div>
+					</li>
+					<li>
+						<div class="pap_tit">
+							<a href=""><em></em>国际文化交流学院承办2020年汉语水平等级考试</a>
+						</div>
+						<div class="time_box">
+							<span class="time">2020-12-10</span>
+						</div>
+					</li>
+					<li>
+						<div class="pap_tit">
+							<a href=""><em></em>【特稿】体育学院近期学生管理工作实践与反思</a>
+						</div>
+						<div class="time_box">
+							<span class="time">2020-12-09</span>
+						</div>
+					</li>
+					<li>
+						<div class="pap_tit">
+							<a href=""><em></em>我校召开双学士学位专业和辅修专业专项工作推进会</a>
+						</div>
+						<div class="time_box">
+							<span class="time">2020-12-08</span>
+						</div>
+					</li>
+					<li>
+						<div class="pap_tit">
+							<a href=""><em></em>计算机学院冯冀宁教授受邀参加中科院强军科技讲坛</a>
+						</div>
+						<div class="time_box">
+							<span class="time">2020-12-08</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="foot clearfloat">
+				<div class="foot_logo">
+					<img src="images\foot_logo.png">
+				</div>
+				<div class="copy">
+					<p>版权所有 </p>
+					<p>河北师范大学 | 河北省石家庄市南二环东路20号 | 050024 | </p>
+					<p>  冀ICP备18011017号-3 |冀公网安备 13010802000630号</p> 
+				</div>
+				<div class="access">
+					<p>总访问量： 0</p>
+					<p>今日访问量：0</p>
+					<p>教师主页开通人数：0</p>
+				</div>
+				<div class="divis clearfloat">
+					<p><a href="">人事处</a></p>
+					<p><a href="">研究生院</a></p>
+					<p><a href="">信息化办</a></p>
+					<p><a href="">河北师范大学</a></p>
+				</div>
+				<div class="code">
+					<img src="images\code.jpg">
+				</div>
+			</div>
+		</div>
+		<script>
+		var box = document.getElementById('box');
+		var oNavlist = document.getElementById('nav').children;
+		var slider = document.getElementById('slider');
+		var left = document.getElementById('left');
+		var right = document.getElementById('right');
+		var index = 1;
+		var timer;
+		var isMoving = false;
+		box.onmouseover = function(){
+			animate(left,{opacity:50})
+			animate(right,{opacity:50})
+			clearInterval(timer)
+		}
+		box.onmouseout = function(){
+			animate(left,{opacity:0})
+			animate(right,{opacity:0})
+			timer = setInterval(next, 3000);
+		}
+		right.onclick = next;
+		left.onclick = prev;
+		for( var i=0; i<oNavlist.length; i++ ){
+			oNavlist[i].index = i;
+			oNavlist[i].onclick = function(){
+				index = this.index+1;
+				navmove();
+				animate(slider,{left:-1200*index});
+			}
+		}
+		function next(){
+			if(isMoving){
+				return;
+			}
+			isMoving = true;
+			index++;
+			navmove();
+			animate(slider,{left:-1200*index},function(){
+				if(index==6){
+					slider.style.left = '-1200px';
+					index = 1;
+				}
+				isMoving = false;
+			});
+		}
+		function prev(){
+			if(isMoving){
+				return;
+			}
+			isMoving = true;
+			index--;
+			navmove();
+			animate(slider,{left:-1200*index},function(){
+				if(index==0){
+					slider.style.left = '-6000px';
+					index = 5;
+				}
+				isMoving = false;
+			});
+		}
+		function navmove(){
+			for( var i=0; i<oNavlist.length; i++ ){
+				oNavlist[i].className = "";
+			}
+			if(index >5 ){
+				oNavlist[0].className = "active";
+			}else if(index<=0){
+				oNavlist[4].className = "active";
+			}else {
+				oNavlist[index-1].className = "active";
+			}
+		}
+		timer = setInterval(next, 2000);
+		var box1 = document.getElementById('box1');
+		box1.onclick = move1;
+		function move1(){
+			animate1(box1,{left:1400,top:500,opacity:30},function(){
+			});
+
+		}
+		function getStyle1(ob, attr1){
+			if(ob.currentStyle){
+			return ob.currentStyle[attr1];
+			} else {
+			return getComputedStyle(ob, null)[attr1];
+			}
+		}	
+		function animate1(ob,json1,callback){
+			clearInterval(ob.timer1);
+			ob.timer1 = setInterval(function(){
+			var isStop1 = true;
+			for(var attr1 in json1){
+			var now1 = 0;
+			if(attr1 == 'opacity'){
+				now1 = parseInt(getStyle1(ob,attr1)*100);
+			}else{
+				now1 = parseInt(getStyle1(ob,attr1));
+			}
+			var speed1 = (json1[attr1] - now1) / 8;
+			speed1 = speed1>0?Math.ceil(speed1):Math.floor(speed1);
+			var cur1 = now1 + speed1;
+			if(attr1 == 'opacity'){
+				ob.style[attr1] = cur1 / 100;
+			}else{
+				ob.style[attr1] = cur1 + 'px';
+			}
+			if(json1[attr1] !== cur1){
+				isStop1 = false;
+			}
+		}
+		if(isStop1){
+			clearInterval(ob.timer1);
+			callback&&callback();
+		}
+	}, 30)
+}
+        function two_char(n) {
+            return n >= 10 ? n : "0" + n;
+        }
+        function time_fun() {
+            var sec=0;
+            setInterval(function () {
+                sec++;
+                var date = new Date(0, 0)
+                date.setSeconds(sec);
+                var h = date.getHours(), m = date.getMinutes(), s = date.getSeconds();
+                document.getElementById("mytime").innerText ="你已浏览:"+ two_char(m) + "分" + two_char(s)+"秒";
+            }, 1000);
+        }
+		alert("欢迎来到河北师范大学！！！");
+		var animateButton = function(e) {
+			e.preventDefault;
+ 			e.target.classList.remove('animate');
+  			e.target.classList.add('animate');
+			setTimeout(function(){
+				e.target.classList.remove('animate');
+				},700);
+		}
+		var classname = document.getElementsByClassName("bubbly-button");
+		for (var i = 0; i < classname.length; i++) {
+ 			 classname[i].addEventListener('click', animateButton, false);
+ 			}
+	</script>
+	</body>
+
+</html>
